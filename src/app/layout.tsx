@@ -1,6 +1,9 @@
+import GoogleAnalytics from '@/components/ga4/GoogleAnalytics';
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID;
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,6 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <GoogleAnalytics GA_MEASUREMENT_ID={GA_MEASUREMENT_ID} />
       <body className={inter.className}>{children}</body>
     </html>
   )
