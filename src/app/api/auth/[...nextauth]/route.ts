@@ -1,9 +1,8 @@
 import NextAuth, {NextAuthOptions} from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import {SupabaseAdapter} from "@auth/supabase-adapter";
-import {Adapter} from "next-auth/adapters";
 import KakaoProvider from "next-auth/providers/kakao";
 import FacebookProvider from "next-auth/providers/facebook";
+import {MongoDBAdapter} from "@auth/mongodb-adapter";
 
 const handler = NextAuth({
         // Login Providers,
@@ -24,12 +23,8 @@ const handler = NextAuth({
                 }
             ),
         ],
-
-        // adapter for supabase
-        adapter: SupabaseAdapter({
-            url: process.env.NEXT_PUBLIC_SUPABASE_URL ?? "",
-            secret: process.env.NEXT_PUBLIC_SUPABASE_ROLE_KEY ?? "",
-        }) as Adapter,
+        // adapter for mongo db
+        adapter: MongoDBAdapter(clientPromise),
     }
 );
 
