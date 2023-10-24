@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@auth/core@0.16.1":
-  version "0.16.1"
-  resolved "https://registry.yarnpkg.com/@auth/core/-/core-0.16.1.tgz#208005d8b7eeb87847988109f15ff4e0250c9828"
-  integrity sha512-V+YifnjpyOadiiTbxfYDV2xYWo8xpKNtwYVskAEKUSwMvE0FlSlP+10QGBpf0axS/AJFOO61IR6GncFF/IOrHQ==
+"@auth/core@0.18.0":
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/@auth/core/-/core-0.18.0.tgz#9dfd8f6e8634d3c089af6afbbb4ecd146c882e1e"
+  integrity sha512-Xb41H3FIv4PlTZmwoFvntaNlVTwIqFxIg7i0/ieHOOxf/7H8EJpGTWoNrqKhwMyZEPU6fHp+VcUiqdX3vFrWSg==
   dependencies:
     "@panva/hkdf" "^1.0.4"
     cookie "0.5.0"
@@ -14,12 +14,12 @@
     preact "10.11.3"
     preact-render-to-string "5.2.3"
 
-"@auth/supabase-adapter@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@auth/supabase-adapter/-/supabase-adapter-0.1.4.tgz#87caedb87fe77891759797dc26f4ee80d0f965f9"
-  integrity sha512-IdfeEZaTweCSppz7iIgyUPSoqovIEwkjWjLYIaPAk87HSJgGayfl9nfYVsgyLr2F24kXFjXfBmpPk1zpFDxTXw==
+"@auth/mongodb-adapter@^2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@auth/mongodb-adapter/-/mongodb-adapter-2.0.3.tgz#2a30378aa145aea96c3d6042f636c3f927e302f3"
+  integrity sha512-yHFezcMBm3GVlAybOS2l/XHB5aHQH7kInwEqaUu5E0JUce2kmp9fERhciS9Fh0Bo7zMloVTdXT6jYBEUdQhrxg==
   dependencies:
-    "@auth/core" "0.16.1"
+    "@auth/core" "0.18.0"
 
 "@babel/runtime@^7.20.13":
   version "7.23.2"

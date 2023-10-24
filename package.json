@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@auth/supabase-adapter": "^0.1.4",
+    "@auth/mongodb-adapter": "^2.0.3",
     "@supabase/supabase-js": "^2.38.1",
     "@types/node": "20.6.3",
     "@types/react": "18.2.22",
