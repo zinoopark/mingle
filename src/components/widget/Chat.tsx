@@ -3,10 +3,18 @@ import React, {useEffect} from 'react';
 import io from "socket.io-client";
 
 let socket;
-const Home = () => {
+const Chat = () => {
     const [message, setMessage] = React.useState("");
     const [userName, setUserName] = React.useState("");
     const [allMessages, setAllMessages] = React.useState([]);
+
+    useEffect(() => {
+        socketInitializer();
+
+        // return () => {
+        //     socket.disconnect();
+        // };
+    }, []);
 
     async function socketInitializer() {
         await fetch("/api/socket");
@@ -17,15 +25,6 @@ const Home = () => {
             setAllMessages((prev) => [...prev, data])
         });
     }
-
-    useEffect(() => {
-        socketInitializer();
-
-        return () => {
-            socket?.disconnect();
-        };
-    }, []);
-
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -54,4 +53,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Chat;
