@@ -1,0 +1,50 @@
+.innerCircle {
+    /*background-color: #fff;*/
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.outerCircle {
+    border-radius: 50%;
+    padding: 4px;
+    overflow: hidden;
+}
+
+.outerCircle {
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+/*types*/
+.colorTypeContent {
+    width: 100%;
+    height: 100%;
+}
+
+.pictureTypeContent {
+    width: 100%;
+    height: 100%;
+}
+
+.textTypeContent {
+    width: 100%;
+    height: 100%;
+    font-size: 40px;
+    /*todo: make this responsive*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*isActive*/
+.true {
+    background-color: green;
+
+}
+
+.false {
+    background-color: transparent;
+}
