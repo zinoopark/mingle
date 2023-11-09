@@ -25,21 +25,24 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="feature/session-provider" />
-                    <option name="lastUsedInstant" value="1699484380" />
+                    <option name="branchName" value="feature/fixed-conflicts" />
+                    <option name="lastUsedInstant" value="1699490009" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/avatar-component" />
+                    <option name="lastUsedInstant" value="1698821676" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="dev" />
-                    <option name="lastUsedInstant" value="1699480314" />
+                    <option name="lastUsedInstant" value="1698821652" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="feature/nextauth" />
-                    <option name="lastUsedInstant" value="1697448816" />
+                    <option name="branchName" value="feature/GA4" />
+                    <option name="lastUsedInstant" value="1698122862" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1696500287" />
-
+                    <option name="branchName" value="feature/socketio" />
+                    <option name="lastUsedInstant" value="1698121924" />
                   </RecentBranch>
                 </list>
               </option>
@@ -64,7 +67,7 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "feature/fixed-conflicts",
     "last_opened_file_path": "/Users/jhlee/Documents/study/mingle",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -72,7 +75,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "/Users/jhlee/Documents/study/mingle/node_modules/typescript/lib",
+    "ts.external.directory.path": "/Users/jhlee/Library/Application Support/JetBrains/Toolbox/apps/WebStorm/ch-0/231.8109.174/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -81,11 +84,9 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-
       <recent name="$PROJECT_DIR$/src/components/providers" />
       <recent name="$PROJECT_DIR$/src/components/common" />
       <recent name="$PROJECT_DIR$/src/components" />
-
       <recent name="$PROJECT_DIR$/src/app" />
       <recent name="$PROJECT_DIR$/src/app/pages" />
     </key>
@@ -101,8 +102,9 @@
       <workItem from="1696499997962" duration="8158000" />
       <workItem from="1697448712762" duration="3500000" />
       <workItem from="1697625323781" duration="733000" />
-      <workItem from="1698119260537" duration="2198000" />
-      <workItem from="1699480256060" duration="5136000" />
+      <workItem from="1698119260537" duration="4825000" />
+      <workItem from="1698228870761" duration="690000" />
+      <workItem from="1698821633243" duration="6056000" />
     </task>
     <servers />
   </component>

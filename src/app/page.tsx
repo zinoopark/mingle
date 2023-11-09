@@ -4,6 +4,7 @@ import {authOptions} from "./api/auth/[...nextauth]/route";
 import React from "react";
 import LoginButtons from "@/components/common/LoginButtons";
 
+
 export default async function Home() {
     const session = await getServerSession(authOptions);
     return (
