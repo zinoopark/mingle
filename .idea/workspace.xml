@@ -39,6 +39,7 @@
                   <RecentBranch>
                     <option name="branchName" value="main" />
                     <option name="lastUsedInstant" value="1696500287" />
+
                   </RecentBranch>
                 </list>
               </option>
@@ -80,9 +81,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+
       <recent name="$PROJECT_DIR$/src/components/providers" />
       <recent name="$PROJECT_DIR$/src/components/common" />
       <recent name="$PROJECT_DIR$/src/components" />
+
       <recent name="$PROJECT_DIR$/src/app" />
       <recent name="$PROJECT_DIR$/src/app/pages" />
     </key>
