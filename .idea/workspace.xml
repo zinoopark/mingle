@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1bcfed2a-2635-40c1-bad2-3b2265c6e1ea" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/stringToColorCode.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/stringToColorCode.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,24 +25,21 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="feature/avatar-component" />
-                    <option name="lastUsedInstant" value="1698821676" />
+                    <option name="branchName" value="feature/session-provider" />
+                    <option name="lastUsedInstant" value="1699484380" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="dev" />
-                    <option name="lastUsedInstant" value="1698821652" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="feature/GA4" />
-                    <option name="lastUsedInstant" value="1698122862" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="feature/socketio" />
-                    <option name="lastUsedInstant" value="1698121924" />
+                    <option name="lastUsedInstant" value="1699480314" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="feature/nextauth" />
                     <option name="lastUsedInstant" value="1697448816" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1696500287" />
+
                   </RecentBranch>
                 </list>
               </option>
@@ -61,29 +58,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/socketio&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/jhlee/Documents/study/mingle&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/jhlee/Documents/study/mingle/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "dev",
+    "last_opened_file_path": "/Users/jhlee/Documents/study/mingle",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Users/jhlee/Documents/study/mingle/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+
+      <recent name="$PROJECT_DIR$/src/components/providers" />
+      <recent name="$PROJECT_DIR$/src/components/common" />
+      <recent name="$PROJECT_DIR$/src/components" />
+
       <recent name="$PROJECT_DIR$/src/app" />
       <recent name="$PROJECT_DIR$/src/app/pages" />
     </key>
@@ -99,9 +101,8 @@
       <workItem from="1696499997962" duration="8158000" />
       <workItem from="1697448712762" duration="3500000" />
       <workItem from="1697625323781" duration="733000" />
-      <workItem from="1698119260537" duration="4825000" />
-      <workItem from="1698228870761" duration="690000" />
-      <workItem from="1698821633243" duration="6056000" />
+      <workItem from="1698119260537" duration="2198000" />
+      <workItem from="1699480256060" duration="5136000" />
     </task>
     <servers />
   </component>
