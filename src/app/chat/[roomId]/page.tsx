@@ -1,19 +1,7 @@
 "use client";
 
 import useChatSocket from "@/components/hook/socket";
-import { useEffect, useState } from "react";
-
-async function getMedia() {
-  try {
-    const media = await navigator.mediaDevices.getUserMedia({
-      audio: true,
-    });
-    console.log(media);
-    return media;
-  } catch (err) {
-    console.log(err);
-  }
-}
+import { useEffect, useRef, useState } from "react";
 
 export default function Page({ params }: { params: { roomId: string } }) {
   const [chat, setChat] = useState<string[]>([]);
@@ -21,61 +9,36 @@ export default function Page({ params }: { params: { roomId: string } }) {
   const [sendMessage, setSendMessage] = useState<string>("");
 
   const [muted, setMuted] = useState<boolean>(false);
-  const [stream, setStream] = useState<MediaStream | undefined>(undefined);
+  const [stream, setStream] = useState<any | undefined>(undefined);
   const [peerConnection, setPeerConnection] = useState<
     RTCPeerConnection | undefined
   >(undefined);
+
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   const { chatSocket: socket } = useChatSocket();
 
   const roomId = params.roomId;
 
-  useEffect((): any => {
-    if (socket) {
-      socket.emit("join_room", roomId, renewCount);
-
-      socket.on("message", addMessage);
-
-      socket.on("someone_joined", renewCount);
-
-      socket.on("someone_left", renewCount);
-
-      socket.on("welcome", async () => {
-        const offer = await peerConnection?.createOffer();
-        peerConnection?.setLocalDescription(offer);
-        console.log(offer);
-        socket.emit("offer", roomId, offer);
+  async function getMedia() {
+    if (!navigator.mediaDevices)
+      return alert("미디어를 지원하지 않는 브라우저입니다.");
+    try {
+      const media = await navigator.mediaDevices.getUserMedia({
+        audio: true,
       });
-
-      socket.on("offer", async (offer) => {
-        peerConnection?.setRemoteDescription(offer);
-        const answer = await peerConnection?.createAnswer();
-        peerConnection?.setLocalDescription(answer);
-        socket.emit("answer", roomId, answer);
-      });
-
-      socket.on("answer", (answer) => {
-        peerConnection?.setRemoteDescription(answer);
-      });
-
-      console.log(socket);
+      console.log(media);
+      setStream(media);
+    } catch (err) {
+      console.log(err);
     }
-    if (socket) return () => socket.emit("leave_room", roomId);
-  }, [socket]);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      getMedia().then((media) => {
-        setStream(media);
-      });
-    }
-  }, []);
+  }
 
   const mediaConnection = () => {
     const newPeerConnection = new RTCPeerConnection();
     setPeerConnection(newPeerConnection);
 
-    stream?.getTracks().forEach((track) => {
+    stream?.getTracks().forEach((track: any) => {
       newPeerConnection.addTrack(track, stream);
     });
   };
@@ -122,6 +85,102 @@ export default function Page({ params }: { params: { roomId: string } }) {
     }
   };
 
+  useEffect((): any => {
+    if (socket) {
+      socket.emit("join_room", roomId, renewCount);
+
+      socket.on("message", addMessage);
+
+      socket.on("someone_joined", renewCount);
+
+      socket.on("someone_left", renewCount);
+
+      socket.on("welcome", async () => {
+        const offer = await peerConnection?.createOffer();
+        peerConnection?.setLocalDescription(offer);
+        console.log(offer);
+        socket.emit("offer", roomId, offer);
+      });
+
+      socket.on("offer", async (offer) => {
+        peerConnection?.setRemoteDescription(offer);
+        const answer = await peerConnection?.createAnswer();
+        peerConnection?.setLocalDescription(answer);
+        socket.emit("answer", roomId, answer);
+      });
+
+      socket.on("answer", (answer) => {
+        peerConnection?.setRemoteDescription(answer);
+      });
+
+      console.log(socket);
+    }
+    if (socket) return () => socket.emit("leave_room", roomId);
+  }, [socket]);
+
+  useEffect(() => {
+    if (peerConnection && socket) {
+      socket.on("welcome", async () => {
+        const offer = await peerConnection?.createOffer();
+        peerConnection?.setLocalDescription(offer);
+        console.log(offer);
+        socket.emit("offer", roomId, offer);
+      });
+
+      socket.on("offer", async (offer) => {
+        peerConnection?.setRemoteDescription(offer);
+        const answer = await peerConnection?.createAnswer();
+        peerConnection?.setLocalDescription(answer);
+        socket.emit("answer", roomId, answer);
+      });
+
+      socket.on("answer", (answer) => {
+        peerConnection?.setRemoteDescription(answer);
+      });
+
+      // peerConnection.onicecandidate = (event) => {
+      //   if(event.candidate){
+      //     socket?.emit("ice", roomId, event.candidate);
+      //   }
+      // }
+    }
+  }, [peerConnection, socket]);
+
+  // useEffect(() => {
+  //   console.log(navigator);
+
+  //   getMedia();
+  // }, [navigator]);
+
+  useEffect(() => {
+    // Moved to inside of useEffect because this function is depended on `stream`
+    async function setupAudio() {
+      if (!stream) {
+        await setupStream();
+      } else {
+        const audioCurr = audioRef.current;
+        if (!audioCurr) return;
+        const audio = audioCurr;
+        if (!audio.srcObject) {
+          audio.srcObject = stream;
+        }
+      }
+    }
+    setupAudio();
+  }, [stream]);
+
+  async function setupStream() {
+    try {
+      const ms = await navigator.mediaDevices.getUserMedia({
+        audio: true,
+      });
+      setStream(ms);
+    } catch (e) {
+      alert("Audio strean is disabled");
+      throw e;
+    }
+  }
+
   return (
     <div>
       <h1>Room Name : {params.roomId}</h1>
@@ -145,7 +204,7 @@ export default function Page({ params }: { params: { roomId: string } }) {
       </div>
 
       <div>
-        <audio autoPlay muted={muted} src={`${stream ? stream : ""}`} />
+        <audio ref={audioRef} autoPlay muted={muted} />
         <div>
           <button onClick={handleClickMuteButton}>
             {muted ? "Unmute" : "Mute"}

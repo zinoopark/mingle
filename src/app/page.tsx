@@ -1,95 +1,77 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+
+import Image from "next/image";
+import styles from "./page.module.css";
+import { useState } from "react";
+import Popup from "@/components/popup/popup";
 
 export default function Home() {
+  const [openPopup, setOpenPopup] = useState<boolean>(false);
+
+  const handlePopupBtnClick = () => {
+    setOpenPopup(true);
+  };
+  const handlePopupClose = () => {
+    setOpenPopup(false);
+  };
+
   return (
-    <main className={styles.main}>
+    <div className={styles.main}>
+      <div className={styles.main_logo}>
+        <a href="/" target="_self" rel="noopener noreferrer">
+          <Image
+            src="/mingle_logo.svg"
+            alt="Mingle Logo"
+            width={251}
+            height={73}
+            priority
+          />
+        </a>
+        <button className={styles.button} onClick={handlePopupBtnClick}>
+          <Image
+            src="/question_mark.svg"
+            alt="question mark"
+            width={18}
+            height={18}
+            priority
+          />
+        </button>
+      </div>
       <div className={styles.description}>
         <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
+          GET 6 CHANCES<br></br> TO GUESS A <br></br>5-LETTER WORD.
         </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
       </div>
-
-      <div className={styles.center}>
+      <div className={styles.double_down_arrow}>
         <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
+          src="/double_down_arrow.svg"
+          alt="double down arrow"
+          width={36}
+          height={30}
           priority
         />
       </div>
+      <Popup open={openPopup} onClickClose={handlePopupClose}>
+        {
+          <div className={styles.popup_content}>
+            <h3>HOW TO MINGLE?</h3>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+            <p>
+              MINGLE IT! <br></br>MINGLE IT! GET 6 CHANCES TO GUESS A 5-LETTER.
+              GET 6 CHANCES TO GUESS A 5-LETTER.
+            </p>
+            <button className={styles.button} onClick={handlePopupClose}>
+              <Image
+                src="/x-button.svg"
+                alt="close button"
+                width={36}
+                height={30}
+                priority
+              />
+            </button>
+          </div>
+        }
+      </Popup>
+    </div>
+  );
 }
