@@ -1,4 +1,7 @@
 #container {
   max-width: 390px;
   margin: 0 auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-inline: 35p;
 }
