@@ -1,0 +1,10 @@
+.layout {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.input {
+  all: unset;
+  max-width: 5rem;
+  text-align: center;
+}

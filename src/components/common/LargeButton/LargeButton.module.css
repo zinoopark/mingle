@@ -1,0 +1,11 @@
+.layout {
+  text-align: center;
+}
+
+.LargeButton {
+  background-color: var(--button-bg-color);
+  color: var(--button-font-color);
+  border-radius: 3.125rem;
+  padding: 12px 55px;
+  font-size: 1.875rem;
+}
