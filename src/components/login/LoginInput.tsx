@@ -50,9 +50,15 @@ export default function LoginInput() {
             {errors.password.message as string}
           </span>
         )}
-        <div className="remember-forgot-section">
+
+        <div className={styles.remember_section}>
           <label>
-            <input className={styles.checkbox} role="switch" type="checkbox" />
+            <input
+              id="rememberInput"
+              className={styles.checkbox}
+              role="switch"
+              type="checkbox"
+            />
             <span>Remember me</span>
           </label>
           <span>Forgot password?</span>
