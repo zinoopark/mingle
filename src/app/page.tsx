@@ -8,7 +8,7 @@ import Popup from "@/components/popup/popup";
 export default function Home() {
   const [openPopup, setOpenPopup] = useState<boolean>(false);
 
-  const handlePopupBtnClick = () => {
+  const handlePopupButtonClick = () => {
     setOpenPopup(true);
   };
   const handlePopupClose = () => {
@@ -27,7 +27,7 @@ export default function Home() {
             priority
           />
         </a>
-        <button className={styles.button} onClick={handlePopupBtnClick}>
+        <button className={styles.button} onClick={handlePopupButtonClick}>
           <Image
             src="/question_mark.svg"
             alt="question mark"

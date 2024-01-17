@@ -2,3 +2,12 @@
   margin-top: auto;
   margin-bottom: 4rem;
 }
+
+.input_layout {
+  margin-top: 4rem;
+}
+
+.keywords_layout {
+  color: var(--button-font-color);
+  text-align: center;
+}
