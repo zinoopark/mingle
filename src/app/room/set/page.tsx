@@ -9,7 +9,7 @@ import styles from "./page.module.css";
 import UpDownNumberInput from "@/components/common/UpDownNumberInput/UpDownNumberInput";
 import Popup from "@/components/popup/popup";
 
-const mingleKeywordList = [
+const mingleKeywordList: string[] = [
   "Party",
   "Pet",
   "Trash",
@@ -29,6 +29,7 @@ export default function Set() {
   const [keywords, setKeywords] = useState<KeywordType>(null);
 
   const [openPopup, setOpenPopup] = useState<boolean>(false);
+  const [isSelected, setIsSelected] = useState<boolean>(false);
 
   const handlePopupButtonClick = () => {
     setOpenPopup(true);
@@ -72,9 +73,10 @@ export default function Set() {
       <SmallButton
         handlePopupButtonClick={handlePopupButtonClick}
         buttonText="KeyWords"
+        isSelected={isSelected}
       />
       <div className={styles.buttonLayout}>
-        <LargeButton buttonText="Invite" />
+        <LargeButton isDisabled={!isSelected} buttonText="Mingle!" />
       </div>
       <Popup
         open={openPopup}
@@ -83,8 +85,8 @@ export default function Set() {
       >
         {
           <div>
-            {mingleKeywordList.map((keyword) => (
-              <div className={styles.keywords_layout}>
+            {mingleKeywordList.map((keyword: string) => (
+              <div key={keyword} className={styles.keywords_layout}>
                 <div>{keyword}</div>
               </div>
             ))}

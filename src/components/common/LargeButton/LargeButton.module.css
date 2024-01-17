@@ -2,10 +2,15 @@
   text-align: center;
 }
 
-.LargeButton {
-  background-color: var(--button-bg-color);
-  color: var(--button-font-color);
+.largeButton {
+  background-color: var(--button-lg-bg-color);
+  color: var(--button-lg-font-color);
   border-radius: 3.125rem;
   padding: 12px 55px;
   font-size: 1.875rem;
+}
+
+.largeButton:disabled {
+  background-color: var(--button-disabled-bg-color);
+  color: var(--button-disabled-font-color);
 }

@@ -8,10 +8,12 @@
 
   --background-color: #ffffff;
   --font-color: #333;
-  --button-bg-color: #0c0c0c;
-  --button-font-color: #e5e5e5;
-  --button-bg-grey-color: #e5e5e5;
-  --button-font-grey-color: #d8d8d8;
+  --button-lg-bg-color: #0c0c0c;
+  --button-lg-font-color: #e5e5e5;
+  --button-sm-bg-color: #e5e5e5;
+  --button-sm-font-color: #d8d8d8;
+  --button-disabled-bg-color: #e5e5e5;
+  --button-disabled-font-color: #f2f2f2;
 }
 
 * {

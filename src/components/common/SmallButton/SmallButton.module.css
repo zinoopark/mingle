@@ -4,10 +4,19 @@
   margin-top: 2.18rem;
 }
 
-.SmallButton {
+.smallButton {
   all: unset;
-  background-color: var(--button-bg-grey-color);
-  color: var(--button-bg-color);
+  background-color: var(--button-sm-bg-color);
+  color: var(--button-lg-bg-color);
+  border-radius: 0.3rem;
+  padding: 8px 20px;
+  font-size: 1rem;
+}
+
+.selected {
+  all: unset;
+  background-color: var(--button-lg-bg-color);
+  color: var(--button-lg-font-color);
   border-radius: 0.3rem;
   padding: 8px 20px;
   font-size: 1rem;

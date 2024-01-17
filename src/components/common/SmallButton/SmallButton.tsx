@@ -11,6 +11,7 @@ const robotoSerif = Roboto_Serif({
 export default function SmallButton(props: {
   buttonText?: string;
   imgUrl?: string;
+  isSelected?: boolean;
   handlePopupButtonClick?: () => void;
 }) {
   return (
@@ -19,7 +20,7 @@ export default function SmallButton(props: {
       {props?.buttonText && (
         <button
           onClick={props.handlePopupButtonClick}
-          className={styles.SmallButton}
+          className={props.isSelected ? styles.selected : styles.smallButton}
         >
           {props.buttonText}
         </button>
